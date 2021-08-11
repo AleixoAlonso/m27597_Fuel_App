@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Calculate fuel consumption or convert units!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_consumption, R.id.nav_convert, R.id.nav_rate, R.id.nav_share)
+                R.id.nav_consumption, R.id.nav_convert, R.id.nav_rate, R.id.nav_share, R.id.nav_about)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -47,12 +47,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+    // Three dots
+   //  @Override
+   //  public boolean onCreateOptionsMenu(Menu menu) {
+   //      // Inflate the menu; this adds items to the action bar if it is present.
+   //      getMenuInflater().inflate(R.menu.main, menu);
+   //      return true;
+   //  }
 
     @Override
     public boolean onSupportNavigateUp() {

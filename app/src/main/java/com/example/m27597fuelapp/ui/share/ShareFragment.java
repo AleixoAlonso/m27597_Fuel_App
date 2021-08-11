@@ -22,8 +22,8 @@ public class ShareFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         shareViewModel =
                 new ViewModelProvider(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_rate, container, false);
-        final TextView textView = root.findViewById(R.id.text_rate);
+        View root = inflater.inflate(R.layout.fragment_share, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
         shareViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

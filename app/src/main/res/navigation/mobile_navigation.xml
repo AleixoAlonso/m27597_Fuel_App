@@ -28,4 +28,10 @@
         android:name="com.example.m27597fuelapp.ui.rate.RateFragment"
         android:label="@string/menu_rate"
         tools:layout="@layout/fragment_rate" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.m27597fuelapp.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>

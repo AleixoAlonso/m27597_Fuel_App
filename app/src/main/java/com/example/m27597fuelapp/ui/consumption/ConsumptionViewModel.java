@@ -10,7 +10,7 @@ public class ConsumptionViewModel extends ViewModel {
 
     public ConsumptionViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Consumption Fragment");
     }
 
     public LiveData<String> getText() {

@@ -10,7 +10,7 @@ public class ConvertViewModel extends ViewModel {
 
     public ConvertViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("Conversion Fragment");
     }
 
     public LiveData<String> getText() {
