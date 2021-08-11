@@ -2,7 +2,9 @@ package com.example.m27597fuelapp;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -18,12 +20,87 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    double odo1;
+    double odo2;
+    double trip;
+    double fuelVol;
+    double consumption;
+    double consumptionRounded;
+
+    double perGallon;
+    double perKilo;
+    double resultKilo;
+    double resultGallon;
+    double resultKiloRounded;
+    double resultGallonRounded;
+
+    EditText odoStartInput;
+    EditText odoEndInput;
+    EditText fuelVolInput;
+    EditText kiloInput;
+    EditText gallonInput;
+
+    Button calcConsumptionButton;
+    Button calcMPGButton;
+    Button calcKiloButton;
+
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        odoStartInput = (EditText) findViewById(R.id.odo1);
+        odoEndInput = (EditText) findViewById(R.id.odo2);
+        fuelVolInput = (EditText) findViewById(R.id.fuelVol);
+
+        kiloInput = (EditText) findViewById(R.id.literKilo);
+        gallonInput = (EditText) findViewById(R.id.MPG);
+
+        calcConsumptionButton = (Button) findViewById(R.id.calculateButton);
+        calcMPGButton = (Button) findViewById(R.id.mpgButton);
+        calcKiloButton = (Button) findViewById(R.id.kiloButton);
+
+        calcMPGButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                perKilo = Float.valueOf(kiloInput.getText().toString());
+
+                resultGallon = 235.215 / perKilo;
+                resultGallonRounded = Math.round(resultGallon * 100.0) / 100.0;
+
+                //showToast( String.valueOf(kiloInput) + " L/100km is " + String.valueOf(resultGallonRounded) + " Miles per Gallon");
+            }
+        });
+
+        calcKiloButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                perGallon = Float.valueOf(gallonInput.getText().toString());
+
+                resultKilo = 235.215 / perGallon;
+                resultKiloRounded = Math.round(resultKilo * 100.0) / 100.0;
+
+                //showToast( String.valueOf(gallonInput) + " Miles per Gallon is " + String.valueOf(resultKiloRounded) + " L/100km");
+            }
+        });
+
+        calcConsumptionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                odo1 = Float.valueOf(odoStartInput.getText().toString());
+                odo2 = Float.valueOf(odoEndInput.getText().toString());
+                fuelVol = Float.valueOf(fuelVolInput.getText().toString());
+
+                trip = odo2 - odo1;
+                consumption = (fuelVol / trip) * 100;
+                consumptionRounded = Math.round(consumption * 100.0) / 100.0;
+
+                showToast("You've spent " + String.valueOf(consumptionRounded) + " liters per 100km");
+            }
+        });
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -47,18 +124,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    // Three dots
-   //  @Override
-   //  public boolean onCreateOptionsMenu(Menu menu) {
-   //      // Inflate the menu; this adds items to the action bar if it is present.
-   //      getMenuInflater().inflate(R.menu.main, menu);
-   //      return true;
-   //  }
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private void showToast(String text) {
+        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
     }
 }
