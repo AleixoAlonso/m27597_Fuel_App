@@ -23,13 +23,13 @@ public class RateFragment extends Fragment {
         rateViewModel =
                 new ViewModelProvider(this).get(RateViewModel.class);
         View root = inflater.inflate(R.layout.fragment_rate, container, false);
-        final TextView textView = root.findViewById(R.id.text_rate);
-        rateViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        //final TextView textView = root.findViewById(R.id.text_rate);
+        //rateViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        //    @Override
+        //    public void onChanged(@Nullable String s) {
+        //        textView.setText(s);
+        //    }
+        //});
         return root;
     }
 }

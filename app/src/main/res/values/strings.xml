@@ -11,4 +11,8 @@
     <string name="menu_convert">Convert</string>
     <string name="menu_share">Share</string>
     <string name="menu_rate">Rate</string>
+
+    <string name="text_multi1">"Made by Aleixo Alonso/ m27597/ u35153."</string>
+    <string name="text_multi2">"This application lets the you calculate your vehicle's fuel consumption. You can also convert fuel prices into different currencies and from miles-per-gallon to liters-per-100km. To calculate fuel consumption, simply enter the odometer value of your previous refill, then the odometer value of your last value. The volume of fuel used and the distance travelled is used to calculate your consumption."</string>
+
 </resources>
