@@ -2,19 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_consumption"
             android:icon="@drawable/ic_consumption"
             android:title="@string/menu_consumption" />
+
         <item
             android:id="@+id/nav_convert"
             android:icon="@drawable/ic_convert"
             android:title="@string/menu_convert" />
-        <item
-            android:id="@+id/nav_rate"
-            android:icon="@drawable/ic_rate"
-            android:title="@string/menu_rate" />
     </group>
+
+    <item android:title="Tell your friends!">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="@string/menu_share" />
+
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_rate"
+                android:title="@string/menu_rate" />
+        </menu>
+    </item>
 </menu>

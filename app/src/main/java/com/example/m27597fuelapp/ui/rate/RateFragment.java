@@ -1,4 +1,4 @@
-package com.example.m27597fuelapp.ui.slideshow;
+package com.example.m27597fuelapp.ui.rate;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.m27597fuelapp.R;
 
-public class SlideshowFragment extends Fragment {
+public class RateFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private RateViewModel rateViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        rateViewModel =
+                new ViewModelProvider(this).get(RateViewModel.class);
         View root = inflater.inflate(R.layout.fragment_rate, container, false);
         final TextView textView = root.findViewById(R.id.text_rate);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        rateViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

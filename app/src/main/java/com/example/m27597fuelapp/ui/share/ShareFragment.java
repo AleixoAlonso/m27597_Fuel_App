@@ -1,4 +1,4 @@
-package com.example.m27597fuelapp.ui.home;
+package com.example.m27597fuelapp.ui.share;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.m27597fuelapp.R;
 
-public class HomeFragment extends Fragment {
+public class ShareFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ShareViewModel shareViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_consumption, container, false);
-        final TextView textView = root.findViewById(R.id.text_consumption);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        shareViewModel =
+                new ViewModelProvider(this).get(ShareViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_rate, container, false);
+        final TextView textView = root.findViewById(R.id.text_rate);
+        shareViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -1,4 +1,4 @@
-package com.example.m27597fuelapp.ui.gallery;
+package com.example.m27597fuelapp.ui.consumption;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.m27597fuelapp.R;
 
-public class GalleryFragment extends Fragment {
+public class ConsumptionFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private ConsumptionViewModel consumptionViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_convert, container, false);
-        final TextView textView = root.findViewById(R.id.text_convert);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        consumptionViewModel =
+                new ViewModelProvider(this).get(ConsumptionViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_consumption, container, false);
+        final TextView textView = root.findViewById(R.id.text_consumption);
+        consumptionViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

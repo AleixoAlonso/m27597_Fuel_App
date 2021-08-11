@@ -9,5 +9,6 @@
 
     <string name="menu_consumption">Consumption</string>
     <string name="menu_convert">Convert</string>
+    <string name="menu_share">Share</string>
     <string name="menu_rate">Rate</string>
 </resources>

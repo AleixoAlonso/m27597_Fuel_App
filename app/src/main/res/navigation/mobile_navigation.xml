@@ -7,19 +7,25 @@
 
     <fragment
         android:id="@+id/nav_consumption"
-        android:name="com.example.m27597fuelapp.ui.home.HomeFragment"
+        android:name="com.example.m27597fuelapp.ui.consumption.ConsumptionFragment"
         android:label="@string/menu_consumption"
         tools:layout="@layout/fragment_consumption" />
 
     <fragment
         android:id="@+id/nav_convert"
-        android:name="com.example.m27597fuelapp.ui.gallery.GalleryFragment"
+        android:name="com.example.m27597fuelapp.ui.convert.ConvertFragment"
         android:label="@string/menu_convert"
         tools:layout="@layout/fragment_convert" />
 
     <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.m27597fuelapp.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
         android:id="@+id/nav_rate"
-        android:name="com.example.m27597fuelapp.ui.slideshow.SlideshowFragment"
+        android:name="com.example.m27597fuelapp.ui.rate.RateFragment"
         android:label="@string/menu_rate"
         tools:layout="@layout/fragment_rate" />
 </navigation>
