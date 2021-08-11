@@ -4,32 +4,63 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.m27597fuelapp.R;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ConvertFragment extends Fragment {
 
-    private ConvertViewModel convertViewModel;
+    double perGallon;
+    double perKilo;
+    double resultKilo;
+    double resultGallon;
+    double resultKiloRounded;
+    double resultGallonRounded;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        convertViewModel =
-                new ViewModelProvider(this).get(ConvertViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_convert, container, false);
-        //final TextView textView = root.findViewById(R.id.text_convert);
-        //convertViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-        //    @Override
-        //    public void onChanged(@Nullable String s) {
-        //        textView.setText(s);
-        //    }
-        //});
+    EditText kiloInput;
+    EditText gallonInput;
+    View root;
+
+    Button calcMPGButton;
+    Button calcKiloButton;
+
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+        root = inflater.inflate(R.layout.fragment_convert, container, false);
+
+        kiloInput = (EditText) root.findViewById(R.id.literKilo);
+        gallonInput = (EditText) root.findViewById(R.id.MPG);
+
+
+        calcMPGButton = (Button) root.findViewById(R.id.mpgButton);
+        calcMPGButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                perKilo = Float.valueOf(kiloInput.getText().toString());
+                resultGallon = 235.215 / perKilo;
+                resultGallonRounded = Math.round(resultGallon * 100.0) / 100.0;
+
+                Toast.makeText(getActivity(), perKilo + " L/100km is equal to " + resultGallonRounded + " Miles per Gallon.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        calcKiloButton = (Button) root.findViewById(R.id.kiloButton);
+        calcKiloButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                perGallon = Float.valueOf(gallonInput.getText().toString());
+                resultKilo = 235.215 / perGallon;
+                resultKiloRounded = Math.round(resultKilo * 100.0) / 100.0;
+
+                Toast.makeText(getActivity(), perGallon + " Miles per Gallon is equal to " + resultKiloRounded + " L/100km.", Toast.LENGTH_LONG).show();
+            }
+        });
         return root;
     }
 }

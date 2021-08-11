@@ -62,29 +62,29 @@ public class MainActivity extends AppCompatActivity {
         calcMPGButton = (Button) findViewById(R.id.mpgButton);
         calcKiloButton = (Button) findViewById(R.id.kiloButton);
 
-        calcMPGButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                perKilo = Float.valueOf(kiloInput.getText().toString());
-
-                resultGallon = 235.215 / perKilo;
-                resultGallonRounded = Math.round(resultGallon * 100.0) / 100.0;
-
-                //showToast( String.valueOf(kiloInput) + " L/100km is " + String.valueOf(resultGallonRounded) + " Miles per Gallon");
-            }
-        });
-
-        calcKiloButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                perGallon = Float.valueOf(gallonInput.getText().toString());
-
-                resultKilo = 235.215 / perGallon;
-                resultKiloRounded = Math.round(resultKilo * 100.0) / 100.0;
-
-                //showToast( String.valueOf(gallonInput) + " Miles per Gallon is " + String.valueOf(resultKiloRounded) + " L/100km");
-            }
-        });
+        //calcMPGButton.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        perKilo = Float.valueOf(kiloInput.getText().toString());
+//
+        //        resultGallon = 235.215 / perKilo;
+        //        resultGallonRounded = Math.round(resultGallon * 100.0) / 100.0;
+//
+        //        showToast( String.valueOf(kiloInput) + " L/100km is " + String.valueOf(resultGallonRounded) + " Miles per Gallon");
+        //    }
+        //});
+//
+        //calcKiloButton.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        perGallon = Float.valueOf(gallonInput.getText().toString());
+//
+        //        resultKilo = 235.215 / perGallon;
+        //        resultKiloRounded = Math.round(resultKilo * 100.0) / 100.0;
+//
+        //        showToast( String.valueOf(gallonInput) + " Miles per Gallon is " + String.valueOf(resultKiloRounded) + " L/100km");
+        //    }
+        //});
 
         calcConsumptionButton.setOnClickListener(new View.OnClickListener() {
             @Override
