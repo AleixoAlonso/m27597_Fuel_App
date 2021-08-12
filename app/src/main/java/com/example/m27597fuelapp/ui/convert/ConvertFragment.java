@@ -24,15 +24,13 @@ public class ConvertFragment extends Fragment {
 
     EditText kiloInput;
     EditText gallonInput;
-    View root;
 
     Button calcMPGButton;
     Button calcKiloButton;
 
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-        root = inflater.inflate(R.layout.fragment_convert, container, false);
+        View root = inflater.inflate(R.layout.fragment_convert, container, false);
 
         kiloInput = (EditText) root.findViewById(R.id.literKilo);
         gallonInput = (EditText) root.findViewById(R.id.MPG);

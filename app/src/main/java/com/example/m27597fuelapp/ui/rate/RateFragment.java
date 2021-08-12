@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,20 +18,21 @@ import com.example.m27597fuelapp.R;
 
 public class RateFragment extends Fragment {
 
-    private RateViewModel rateViewModel;
+    Button sendRate;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        rateViewModel =
-                new ViewModelProvider(this).get(RateViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View root = inflater.inflate(R.layout.fragment_rate, container, false);
-        //final TextView textView = root.findViewById(R.id.text_rate);
-        //rateViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-        //    @Override
-        //    public void onChanged(@Nullable String s) {
-        //        textView.setText(s);
-        //    }
-        //});
+
+        sendRate = (Button) root.findViewById(R.id.rateButton);
+        sendRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "Thank you for your review!", Toast.LENGTH_LONG).show();
+            }
+        });
+
         return root;
     }
 }

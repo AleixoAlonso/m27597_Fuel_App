@@ -6,25 +6,26 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btnGet"
+        android:id="@+id/rateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="176dp"
         android:text="Send Rating"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar1" />
 
     <RatingBar
         android:id="@+id/ratingBar1"
         android:layout_width="245dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="100dp"
         android:numStars="5"
         android:rating="3.5"
-        app:layout_constraintBottom_toTopOf="@+id/btnGet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView5"
@@ -40,9 +41,9 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="Like my app?"
         android:textSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBar1"
         app:layout_constraintEnd_toEndOf="@+id/ratingBar1"
         app:layout_constraintStart_toStartOf="@+id/ratingBar1"
         app:layout_constraintTop_toTopOf="parent" />

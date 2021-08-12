@@ -27,22 +27,11 @@ public class MainActivity extends AppCompatActivity {
     double consumption;
     double consumptionRounded;
 
-    double perGallon;
-    double perKilo;
-    double resultKilo;
-    double resultGallon;
-    double resultKiloRounded;
-    double resultGallonRounded;
-
     EditText odoStartInput;
     EditText odoEndInput;
     EditText fuelVolInput;
-    EditText kiloInput;
-    EditText gallonInput;
 
     Button calcConsumptionButton;
-    Button calcMPGButton;
-    Button calcKiloButton;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -55,37 +44,7 @@ public class MainActivity extends AppCompatActivity {
         odoEndInput = (EditText) findViewById(R.id.odo2);
         fuelVolInput = (EditText) findViewById(R.id.fuelVol);
 
-        kiloInput = (EditText) findViewById(R.id.literKilo);
-        gallonInput = (EditText) findViewById(R.id.MPG);
-
         calcConsumptionButton = (Button) findViewById(R.id.calculateButton);
-        calcMPGButton = (Button) findViewById(R.id.mpgButton);
-        calcKiloButton = (Button) findViewById(R.id.kiloButton);
-
-        //calcMPGButton.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-        //        perKilo = Float.valueOf(kiloInput.getText().toString());
-//
-        //        resultGallon = 235.215 / perKilo;
-        //        resultGallonRounded = Math.round(resultGallon * 100.0) / 100.0;
-//
-        //        showToast( String.valueOf(kiloInput) + " L/100km is " + String.valueOf(resultGallonRounded) + " Miles per Gallon");
-        //    }
-        //});
-//
-        //calcKiloButton.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-        //        perGallon = Float.valueOf(gallonInput.getText().toString());
-//
-        //        resultKilo = 235.215 / perGallon;
-        //        resultKiloRounded = Math.round(resultKilo * 100.0) / 100.0;
-//
-        //        showToast( String.valueOf(gallonInput) + " Miles per Gallon is " + String.valueOf(resultKiloRounded) + " L/100km");
-        //    }
-        //});
-
         calcConsumptionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,10 +70,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_consumption, R.id.nav_convert, R.id.nav_rate, R.id.nav_share, R.id.nav_about)
                 .setDrawerLayout(drawer)
