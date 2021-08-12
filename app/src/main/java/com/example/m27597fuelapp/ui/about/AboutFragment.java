@@ -1,5 +1,17 @@
+/*
+ * Title:       Semesterabgabe Programmierung 4
+ * Task:        Abdroid Application
+ * Author:      Aleixo Alonso; m27597
+ * Date:        August 9th, 2021
+ */
+
 package com.example.m27597fuelapp.ui.about;
 
+/**
+ * "AboutFragment" navigation fragment.
+ *
+ * @author Aleixo Alonso
+ */
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
