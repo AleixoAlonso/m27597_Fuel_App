@@ -88,7 +88,7 @@ public class ConvertFragment extends Fragment {
                  * Closes the application to punish user for not entering a value.
                  */
                 Log.d(TAG, "Checking fields for input...");
-                if (TextUtils.isEmpty(kiloInput.getText().toString()) || TextUtils.isEmpty(gallonInput.getText().toString())) {
+                if (TextUtils.isEmpty(kiloInput.getText().toString())) {
                     Toast.makeText(getActivity(), "Now you've broken it!", Toast.LENGTH_LONG).show();
                     Toast.makeText(getActivity(), "Don't leave the fields empty!", Toast.LENGTH_LONG).show();
                     Log.e(TAG, "Empty field/s detected! Closing application to avoid universal collapse...");
@@ -131,7 +131,7 @@ public class ConvertFragment extends Fragment {
                  * Closes the application to punish user for not entering a value.
                  */
                 Log.d(TAG, "Checking fields for input...");
-                if (TextUtils.isEmpty(kiloInput.getText().toString()) || TextUtils.isEmpty(gallonInput.getText().toString())) {
+                if (TextUtils.isEmpty(gallonInput.getText().toString())) {
                     Toast.makeText(getActivity(), "Now you've broken it!", Toast.LENGTH_LONG).show();
                     Toast.makeText(getActivity(), "Don't leave the fields empty!", Toast.LENGTH_LONG).show();
                     Log.e(TAG, "Empty field/s detected! Closing application to avoid universal collapse...");
