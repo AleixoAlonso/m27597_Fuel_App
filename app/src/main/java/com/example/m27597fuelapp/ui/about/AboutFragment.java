@@ -13,6 +13,7 @@ package com.example.m27597fuelapp.ui.about;
  * @author Aleixo Alonso
  */
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.m27597fuelapp.R;
+import com.example.m27597fuelapp.ui.consumption.ConsumptionFragment;
 
 public class AboutFragment extends Fragment {
 
+    //Used for logging
+    private static final String TAG = ConsumptionFragment.class.getSimpleName();
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        System.out.println("TAG = " + TAG);
+        Log.d(TAG, "Loading " + TAG);
 
         View root = inflater.inflate(R.layout.fragment_about, container, false);
 
