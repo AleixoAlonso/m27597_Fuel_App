@@ -19,6 +19,7 @@
 
 package com.example.m27597fuelapp;
 
+//NEW GIT TEST
 /**
  * "MainActivity" class of this application contains methods to calculate fuel economy, display a
  * message and open the drawer navigation.
