@@ -1,5 +1,11 @@
-package com.example.m27597fuelapp;
+/*
+ * Title:       Semesterabgabe Programmierung 4
+ * Task:        Abdroid Application
+ * Author:      Aleixo Alonso; m27597
+ * Date:        August 9th, 2021
+ */
 
+package com.example.m27597fuelapp;
 
 import android.view.View;
 import android.view.ViewGroup;
