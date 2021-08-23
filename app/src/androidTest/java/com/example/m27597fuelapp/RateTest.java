@@ -1,6 +1,6 @@
 /*
  * Title:       Semesterabgabe Programmierung 4
- * Task:        Abdroid Application
+ * Task:        Android Application
  * Author:      Aleixo Alonso; m27597
  * Date:        August 9th, 2021
  */
